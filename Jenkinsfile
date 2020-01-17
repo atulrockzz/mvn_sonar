@@ -1,4 +1,22 @@
-node('master'){
+pipeline{
+  agent any
 stages{
 stage('git checkout scm'){
-git
+  steps{
+git 'https://github.com/atulrockzz/mvn_sonar/blob/master/Jenkinsfile'
+     }
+}
+  stage('Analysis'){
+    steps{
+    Sh '/opt/maven/bin.mvn clean verify sonar:sonar -Dsonar.password=admin-Dsonar.login=admin’
+  }
+  }
+  stage('Build'){
+    steps{
+      Sh '/opt/maven/bin/mvn clean install'
+    }
+  }
+}
+}
+  
+ 
