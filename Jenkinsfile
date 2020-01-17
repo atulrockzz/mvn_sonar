@@ -3,7 +3,7 @@ pipeline{
 stages{
 stage('git checkout scm'){
   steps{
-git 'https://github.com/atulrockzz/mvn_sonar/blob/master/Jenkinsfile'
+git 'https://github.com/atulrockzz/mvn_sonar.git'
      }
 }
   stage('Analysis'){
