@@ -13,7 +13,7 @@ git 'https://github.com/atulrockzz/mvn_sonar.git'
   }
   stage('Build'){
     steps{
-      Sh '/opt/maven/bin/mvn clean install'
+      sh '/opt/maven/bin/mvn clean install'
     }
   }
 }
