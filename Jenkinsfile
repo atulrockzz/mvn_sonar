@@ -8,7 +8,7 @@ git 'https://github.com/atulrockzz/mvn_sonar.git'
 }
   stage('Analysis'){
     steps{
-    Sh '/opt/maven/bin.mvn clean verify sonar:sonar -Dsonar.password=admin-Dsonar.login=admin’
+    Sh '/opt/maven/bin.mvn clean verify sonar:sonar -Dsonar.password=admin -Dsonar.login=admin’
   }
   }
   stage('Build'){
